@@ -60,7 +60,7 @@ function match(event: KeyboardEvent, press: KeyBindingPress): boolean {
 		// MDN event.key: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
 		// MDN event.code: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
 		(
-			press[1].toUpperCase() !== event.key.toUpperCase() &&
+			(press[1] && press[1].toUpperCase()) !== (event.key && event.key.toUpperCase()) &&
 			press[1] !== event.code
 		) ||
 
